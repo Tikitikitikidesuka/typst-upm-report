@@ -16,6 +16,7 @@
   report-type: "Bachelor's thesis",
   degree-name: "Grado en Ingeniería de Tecnologías de la Sociedad de la Información",
   school-color: rgb(0, 114, 206),
+  school-logo: "assets/etsisi-logo.svg",
   school-watermark: "assets/upm-watermark.png",
   // Bibliography configuration
   bibliography-file: "references.bib",
@@ -304,4 +305,29 @@
       style: bibliography-style,
     )
   }
+
+  // Back cover page
+  page(
+    margin: 0cm,
+    numbering: none,
+    header: none,
+    fill: black, // Entire page background in black
+  )[
+    // school-color rectangle covering top half
+    #place(
+      top + left,
+      rect(
+        width: 100%,
+        height: 50%,
+        fill: school-color,
+      ),
+    )
+
+    // School logo centered in bottom half
+    #place(
+      center + horizon,
+      dy: 25%, // Shift down to center in bottom half
+      image(school-logo, width: 50%),
+    )
+  ]
 }
