@@ -13,14 +13,7 @@
   report-type: "Bachelor's thesis",
   degree-name: "Grado en Ingeniería del Software",
 
-  school-color: rgb(0, 114, 206),
-  school-watermark: "upm-watermark.png",
-
-  license-name: "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
-  license-logo: "cc-by-nc-sa.svg",
-  license-link: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-
-  bibliography-file: "references.bib",
+  bibliography-file: "examples/references.bib",
   bibliography-style: "ieee",
 )
 
