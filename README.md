@@ -4,7 +4,7 @@ Unofficial template for Universidad Politécnica de Madrid thesis and reports.
 
 This is a Typst version of the template originally developed by Blazaid at [https://github.com/blazaid/UPM-Report-Template.git](https://github.com/blazaid/UPM-Report-Template.git).
 
-A LaTeX version is also available at [git@github.com:Tikitikitikidesuka/My-UPM-Report-Template.git](git@github.com:Tikitikitikidesuka/My-UPM-Report-Template.git).
+A LaTeX version is also available at [https://github.com/Tikitikitikidesuka/typst-upm-report.git](https://github.com/Tikitikitikidesuka/typst-upm-report.git).
 
 ## Parameters
 
