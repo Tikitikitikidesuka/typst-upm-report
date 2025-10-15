@@ -135,8 +135,14 @@
   )[
     // Style the outline entries
     #show outline.entry.where(level: 1): it => {
+      v(18pt, weak: true)
+      text(fill: school-color)[#strong(it)]
+    }
+
+    // Style level 2 entries in blue as well
+    #show outline.entry.where(level: 2): it => {
       v(12pt, weak: true)
-      strong(it)
+      text(fill: school-color)[#it]
     }
 
     #set text(size: 12pt)
@@ -146,17 +152,17 @@
       above: 0pt,
       below: 25pt,
       {
-        set text(size: 30pt, fill: school-color, weight: "bold")
-        [Table of Contents]
-        v(0.3em)
-        line(length: 100%, stroke: 1pt + school-color)
+        set text(size: 30pt, weight: "regular")
+        align(right)[Table of Contents]
+        v(-1.0em)
+        line(length: 100%, stroke: 1pt)
       },
     )
 
-    #set par(leading: 0.8em)
+    #set par(leading: 1.8em)
 
     #outline(
-      title: none, // Using custom title above
+      title: none,
       depth: 2,
       indent: auto,
     )
@@ -221,22 +227,31 @@
   // Chapter headings (level 1)
   show heading.where(level: 1): it => {
     pagebreak(weak: true)
-    set text(size: 30pt, fill: school-color, weight: "bold")
+    set text(size: 30pt, weight: "regular")
     block(
       above: 0pt,
       below: 25pt,
       {
         if it.numbering != none {
-          counter(heading).display()
-          [. ]
+          grid(
+            columns: (auto, 1fr),
+            column-gutter: 0.6em,
+            align: (left, right),
+            // Left side: number and dot in blue
+            text(fill: school-color)[#counter(heading).display().],
+            // Right side: heading text in black
+            it.body,
+          )
+        } else {
+          // If no numbering, just right-align the text
+          align(right, it.body)
         }
-        h(0.6em)
-        it.body
-        v(0.3em)
+        v(-1.0em)
         line(length: 100%, stroke: 1pt)
       },
     )
   }
+
 
   // Section headings (level 2)
   show heading.where(level: 2): it => {
