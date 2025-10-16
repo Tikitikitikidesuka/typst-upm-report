@@ -12,6 +12,9 @@ This is a Typst version of the template originally developed by Blazaid at [http
 | `author` | Author's name | "Author's name" |
 | `supervisor` | Supervisor's name | "Supervisor's Name" |
 | `date` | Document date | Today's date |
+| `acknowledgements` | Content for acknowledgements page (optional) | none |
+| `abstract-en` | Abstract text (optional) | none |
+| `keywords-en` | Keywords for abstract (optional) | none |
 | `license-name` | License name | "Creative Commons Attribution..." |
 | `license-logo` | Path to license logo image | "assets/cc-by-nc-sa.svg" |
 | `license-link` | URL to license | CC BY-NC-SA 4.0 URL |
