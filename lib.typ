@@ -4,6 +4,10 @@
   author: "Author's name",
   supervisor: "Supervisor's Name",
   date: datetime.today(),
+  // Acknowledgements and Abstract
+  acknowledgements: none,
+  abstract-en: none,
+  keywords-en: none,
   // License info
   license-name: "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
   license-logo: "assets/cc-by-nc-sa.svg",
@@ -15,7 +19,7 @@
   school-abbr: "ETSISI",
   report-type: "Bachelor's thesis",
   degree-name: "Grado en Ingeniería de Tecnologías de la Sociedad de la Información",
-  school-color: rgb(0, 114, 206),
+  school-color: rgb(32, 130, 192),
   school-logo: "assets/etsisi-logo.svg",
   school-watermark: "assets/upm-watermark.png",
   // Bibliography configuration
@@ -54,7 +58,6 @@
       bottom: 3cm,
       {
         set text(size: 12pt)
-
 
         // Header info
         upper(university)
@@ -100,13 +103,16 @@
     // Document metadata
     #emph(title)
 
-    *Written by:* #author
+    // Tighter paragraph spacing just for author/supervisor/date
+    #[
+      #set par(spacing: 0.5em)
 
-    *Supervised by:* #supervisor
+      *Written by:* #author
 
-    #report-type, #date.display("[day]/[month]/[year]")
+      *Supervised by:* #supervisor
 
-    #v(1em)
+      #report-type, #date.display("[day]/[month]/[year]")
+    ]
 
     *#school-name*
 
@@ -117,17 +123,83 @@
     #v(1em)
 
     // License text and logo in grid layout
-    This work is licensed under #if license-link != none { link(license-link)[#license-name] } else { license-name }.
-    #if license-logo != none {
-      if license-link != none {
-        link(license-link)[#image(license-logo, width: 80pt)]
-      } else {
-        image(license-logo, width: 80pt)
-      }
-    }
+    #grid(
+      columns: (1fr, auto),
+      column-gutter: 4em,
+      align: (left, right),
+      [
+        #set par(justify: true)
+        This work is licensed under #if license-link != none { link(license-link)[#license-name] } else {
+          license-name
+        }.
+      ],
+      if license-logo != none {
+        if license-link != none {
+          link(license-link)[#image(license-logo, width: 80pt)]
+        } else {
+          image(license-logo, width: 80pt)
+        }
+      },
+    )
 
     #v(5em)
   ]
+
+  // Acknowledgements page (optional)
+  if acknowledgements != none {
+    page(
+      header: none,
+      numbering: none,
+    )[
+      #set text(size: 12pt)
+
+      #block(
+        above: 0pt,
+        below: 25pt,
+        {
+          set text(size: 30pt, weight: "regular")
+          align(right)[Acknowledgements]
+          v(-0.9em)
+          line(length: 100%, stroke: 0.5pt)
+          v(0.5em)
+        },
+      )
+
+      #set par(justify: true, leading: 0.65em)
+      #acknowledgements
+    ]
+  }
+
+  // Abstract page (optional)
+  if abstract-en != none {
+    page(
+      header: none,
+      numbering: none,
+    )[
+      #set text(size: 12pt)
+
+      #block(
+        above: 0pt,
+        below: 25pt,
+        {
+          set text(size: 30pt, weight: "regular")
+          align(right)[Abstract]
+          v(-0.9em)
+          line(length: 100%, stroke: 0.5pt)
+          v(0.5em)
+        },
+      )
+
+      #set par(justify: true, leading: 0.65em)
+
+      #abstract-en
+
+      #if keywords-en != none [
+        #v(1em)
+        *Keywords:* #keywords-en
+      ]
+    ]
+  }
 
   // Table of Contents
   page(
@@ -140,7 +212,7 @@
       text(fill: school-color)[#strong(it)]
     }
 
-    // Style level 2 entries in blue as well
+    // Style level 2 entries in blue
     #show outline.entry.where(level: 2): it => {
       v(12pt, weak: true)
       text(fill: school-color)[#it]
@@ -155,8 +227,9 @@
       {
         set text(size: 30pt, weight: "regular")
         align(right)[Table of Contents]
-        v(-1.0em)
-        line(length: 100%, stroke: 1pt)
+        v(-0.9em)
+        line(length: 100%, stroke: 0.5pt)
+        v(0.5em)
       },
     )
 
@@ -232,7 +305,9 @@
     block(
       above: 0pt,
       below: 25pt,
+      spacing: 0pt,
       {
+        set par(spacing: 0pt)
         if it.numbering != none {
           grid(
             columns: (auto, 1fr),
@@ -247,12 +322,11 @@
           // If no numbering, just right-align the text
           align(right, it.body)
         }
-        v(-1.0em)
-        line(length: 100%, stroke: 1pt)
+        v(-0.9em)
+        line(length: 100%, stroke: 0.5pt)
       },
     )
   }
-
 
   // Section headings (level 2)
   show heading.where(level: 2): it => {
@@ -311,9 +385,9 @@
     margin: 0cm,
     numbering: none,
     header: none,
-    fill: black, // Entire page background in black
+    fill: black,
   )[
-    // school-color rectangle covering top half
+    // School-color rectangle covering top half
     #place(
       top + left,
       rect(
@@ -326,7 +400,7 @@
     // School logo centered in bottom half
     #place(
       center + horizon,
-      dy: 25%, // Shift down to center in bottom half
+      dy: 25%,
       image(school-logo, width: 50%),
     )
   ]

@@ -13,6 +13,10 @@
   report-type: "Bachelor's thesis",
   degree-name: "Grado en Ingeniería del Software",
 
+  acknowledgements: "Thanks to my family, friends, and colleagues for their support.",
+  abstract-en: "This thesis explores the fascinating world of example topics. It provides insights and analysis on various aspects of the subject matter, aiming to contribute to the existing body of knowledge.",
+  keywords-en: "example, thesis, typst, template",
+
   bibliography-file: "examples/references.bib",
   bibliography-style: "ieee",
 )
