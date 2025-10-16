@@ -31,6 +31,61 @@ You can cite things like this @fakebook2024, and it will appear in your bibliogr
 
 You can have subsections too. Put your real content here instead of this placeholder text.
 
+#figure(
+  image("../assets/etsisi-logo.svg", width: 80%),
+  caption: [This is my figure caption],
+)
+
+#figure(
+  image("../assets/etsisi-logo.svg", width: 80%),
+  caption: [This is my figure caption 2],
+)
+
+#figure(
+  image("../assets/etsisi-logo.svg", width: 80%),
+  caption: [This is my figure caption 3],
+)
+
+#figure(
+  image("../assets/etsisi-logo.svg", width: 80%),
+  caption: [This is my figure caption 4],
+)
+
+#figure(
+  table(
+    columns: 3,
+    [Header 1], [Header 2], [Header 3],
+    [Data 1], [Data 2], [Data 3],
+  ),
+  caption: [This is my table caption],
+)
+
+#figure(
+  table(
+    columns: 3,
+    [Header 1], [Header 2], [Header 3],
+    [Data 1], [Data 2], [Data 3],
+  ),
+  caption: [This is my table caption 2],
+)
+#figure(
+  table(
+    columns: 3,
+    [Header 1], [Header 2], [Header 3],
+    [Data 1], [Data 2], [Data 3],
+  ),
+  caption: [This is my table caption 3],
+)
+#figure(
+  table(
+    columns: 3,
+    [Header 1], [Header 2], [Header 3],
+    [Data 1], [Data 2], [Data 3],
+  ),
+  caption: [This is my table caption 4],
+)
+
+
 == Lists Work Too
 
 Here's how to make a list:

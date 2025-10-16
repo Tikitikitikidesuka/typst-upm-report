@@ -242,6 +242,82 @@
     )
   ]
 
+  // List of Figures (optional - only shows if document has figures)
+  context {
+    let figures = query(figure.where(kind: image))
+    if figures.len() > 0 {
+      page(
+        header: none,
+        numbering: none,
+      )[
+        // Style outline entries in blue with spacing
+        #show outline.entry: it => {
+          v(12pt, weak: true)
+          text(fill: school-color)[#it]
+        }
+
+        #set text(size: 12pt)
+
+        #block(
+          above: 0pt,
+          below: 25pt,
+          {
+            set text(size: 30pt, weight: "regular")
+            align(right)[List of Figures]
+            v(-0.9em)
+            line(length: 100%, stroke: 0.5pt)
+            v(0.5em)
+          },
+        )
+
+        #set par(leading: 1.8em)
+
+        #outline(
+          title: none,
+          target: figure.where(kind: image),
+        )
+      ]
+    }
+  }
+
+  // List of Tables (optional - only shows if document has tables)
+  context {
+    let tables = query(figure.where(kind: table))
+    if tables.len() > 0 {
+      page(
+        header: none,
+        numbering: none,
+      )[
+        // Style outline entries in blue with spacing
+        #show outline.entry: it => {
+          v(12pt, weak: true)
+          text(fill: school-color)[#it]
+        }
+
+        #set text(size: 12pt)
+
+        #block(
+          above: 0pt,
+          below: 25pt,
+          {
+            set text(size: 30pt, weight: "regular")
+            align(right)[List of Tables]
+            v(-0.9em)
+            line(length: 100%, stroke: 0.5pt)
+            v(0.5em)
+          },
+        )
+
+        #set par(leading: 1.8em)
+
+        #outline(
+          title: none,
+          target: figure.where(kind: table),
+        )
+      ]
+    }
+  }
+
   // Page setup for content
   set page(
     paper: "a4",
@@ -324,6 +400,7 @@
         }
         v(-0.9em)
         line(length: 100%, stroke: 0.5pt)
+        v(0.5em)
       },
     )
   }
