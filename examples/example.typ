@@ -1,6 +1,6 @@
-#import "../lib.typ": upm-template
+#import "../lib.typ": upm-report
 
-#show: upm-template.with(
+#show: upm-report.with(
   title: "This is an Example Thesis Title That You Should Replace",
   author: "Jane Example Student",
   supervisor: "Prof. Example McSupervisor",
@@ -32,22 +32,22 @@ You can cite things like this @fakebook2024, and it will appear in your bibliogr
 You can have subsections too. Put your real content here instead of this placeholder text.
 
 #figure(
-  image("../assets/etsisi-logo.svg", width: 80%),
+  image("../assets/upm-watermark.png", width: 80%),
   caption: [This is my figure caption],
 )
 
 #figure(
-  image("../assets/etsisi-logo.svg", width: 80%),
+  image("../assets/upm-watermark.png", width: 80%),
   caption: [This is my figure caption 2],
 )
 
 #figure(
-  image("../assets/etsisi-logo.svg", width: 80%),
+  image("../assets/upm-watermark.png", width: 80%),
   caption: [This is my figure caption 3],
 )
 
 #figure(
-  image("../assets/etsisi-logo.svg", width: 80%),
+  image("../assets/upm-watermark.png", width: 80%),
   caption: [This is my figure caption 4],
 )
 

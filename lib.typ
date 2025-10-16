@@ -1,4 +1,4 @@
-#let upm-template(
+#let upm-report(
   // Cover page info
   title: "Title of the Work",
   author: "Author's name",
