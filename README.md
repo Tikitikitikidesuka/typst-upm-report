@@ -29,9 +29,13 @@ This is a Typst version of the template originally developed by Blazaid at [http
 | `bibliography-file` | Path to .bib file | "references.bib" |
 | `bibliography-style` | Citation style (ieee, apa, mla, etc.) | "ieee" |
 
-## Compiling the Template
+## Using the Template
 
-To compile this template, run:
+Creating a project with this template can be done with:
+
+```typst init @preview/upm-report```
+
+If contributing to the template compilation can be done locally with: 
 
 ```typst compile --root . template/main.typ```
 
