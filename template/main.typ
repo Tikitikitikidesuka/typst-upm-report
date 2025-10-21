@@ -1,4 +1,4 @@
-#import "@preview/upm-report:0.1.0": upm-report
+#import "@preview/bean-upm:0.1.0": upm-report
 
 #show: upm-report.with(
   title: "This is an Example Thesis Title That You Should Replace",

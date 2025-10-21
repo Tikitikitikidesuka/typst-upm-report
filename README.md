@@ -34,7 +34,7 @@ This is a Typst version of the template originally developed by Blazaid at [http
 To start a new document with this template:
 
 ```
-typst init @preview/upm-report my-thesis
+typst init @preview/bean-upm my-thesis
 cd my-thesis
 ```
 
@@ -44,7 +44,7 @@ Then edit `main.typ` and compile with:
 typst compile main.typ
 ```
 
-You can also use the [Typst web app](https://typst.app) and search for "upm-report" in the template gallery.
+You can also use the [Typst web app](https://typst.app) and search for "bean-upm" in the template gallery.
 
 ## Contributing to the Template
 
