@@ -31,13 +31,28 @@ This is a Typst version of the template originally developed by Blazaid at [http
 
 ## Using the Template
 
-Creating a project with this template can be done with:
+To start a new document with this template:
 
-```typst init @preview/upm-report```
+```
+typst init @preview/upm-report my-thesis
+cd my-thesis
+```
 
-If contributing to the template compilation can be done locally with: 
+Then edit `main.typ` and compile with:
 
-```typst compile --root . template/main.typ```
+```
+typst compile main.typ
+```
+
+You can also use the [Typst web app](https://typst.app) and search for "upm-report" in the template gallery.
+
+## Contributing to the Template
+
+If you're developing or modifying this template locally, compile from the repository root with:
+
+```
+typst compile --root . template/main.typ
+```
 
 ## License
 
